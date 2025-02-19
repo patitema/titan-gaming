@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+}
+
+Nav{
+    width: 100%;
+}
+
+header{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 1px #909090;
+}
+
+.container{
+    width: 50%;
+    margin-left: 5%;
+    margin-right: auto;
+    background: radial-gradient(circle, #ff8c007c 5%, transparent 65%);
+}
+
+.container img{
+    width: 900px;
+    height: 700px;
+}
+
+h2{
+    font-size: 45px;
+    margin-right: 5%;
+    margin-left: auto;
+}
