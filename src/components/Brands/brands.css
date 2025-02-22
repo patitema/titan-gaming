@@ -1,0 +1,19 @@
+.container_br{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brands{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 45px;
+    list-style: none;
+}
+
+.brands img{
+    width: 230px;
+    height: 130px;
+}

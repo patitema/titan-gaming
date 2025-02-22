@@ -17,20 +17,178 @@ header{
     border-bottom: solid 1px #909090;
 }
 
-.container{
+header .container{
     width: 50%;
     margin-left: 5%;
     margin-right: auto;
+    padding: 40px 0 40px 0;
     background: radial-gradient(circle, #ff8c007c 5%, transparent 65%);
 }
 
-.container img{
+header .container img{
     width: 900px;
-    height: 700px;
+    height: 75vh;
 }
 
-h2{
+header h2{
     font-size: 45px;
     margin-right: 5%;
     margin-left: auto;
+}
+
+.About_company{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    padding: 0 200px 0 200px;
+    border-bottom: 1px solid #909090;
+}
+
+.About_company .container ul{
+    list-style: none;
+}
+
+.About_company .container li{
+    margin: 35px 0 35px 0;
+}
+
+.About_company .container p{
+    font-size: 35px;
+    text-align: center;
+}
+
+.Slogan{
+    padding: 50px 0 50px 0;
+    border-bottom: 1px solid #909090;
+}
+
+.Slogan .container{
+    display: flex;
+    flex-direction: row;
+    padding: 0 180px;
+}
+
+.Slogan .container img{
+    width: 600px;
+    height: 600px;
+}
+
+.Slogan .container .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 170px;
+}
+
+.Slogan .container .text h2{
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+.Slogan .container .text span{
+    color: #ffbb00;
+}
+
+.Slogan .container .text p{
+    font-size: 25px;
+    text-align: center;
+}
+
+.What_we_do{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #909090;
+}
+
+.What_we_do .container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.What_we_do .container h2{
+    text-align: center;
+    margin: 0 auto 40px auto;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.What_we_do .container ul{
+    list-style: none;
+}
+
+.What_we_do .container p{
+    text-align: start;
+    margin: 15px 0 15px 0;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.Why_us{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    min-height: 600px;
+    border-bottom: 1px solid #909090;
+}
+
+.Why_us .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Why_us .container h2{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.Why_us .container ul{
+    margin-top: 30px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.Why_us .container li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 300px;
+    border: 2px solid #FFF;
+    border-radius: 20px;
+}
+
+.Why_us .container li .text_header{
+    display: flex;
+    align-items: center;
+    height: 20%;
+}
+
+.Why_us .container li .text_main{
+    height: 80%;
+}
+
+.Why_us .container li .text_header h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+.Why_us .container li .text_main p{
+    font-size: 25px;
+    text-align: center;
 }
