@@ -5,7 +5,7 @@ import Logo from"../../assets/images/Logo.png"
 const Footer = () => {
     return (
     <footer>
-        <div class="foot_container">
+        <div className="foot_container">
             <img src={Logo} alt="Логотип"></img>
             <h3>Продажа компьютеров для игр.</h3>
             <ul>

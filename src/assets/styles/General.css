@@ -6,18 +6,27 @@ Nav{
     width: 100%;
 }
 
+/* ============ Header ============ */
 header{
     margin: 0 auto;
     width: 100%;
-    height: auto;
+    height: 93vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     border-bottom: solid 1px #909090;
 }
 
 header .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    padding: 0 0px 0 0px;
+}
+
+header .container_shadow{
     width: 50%;
     margin-left: 5%;
     margin-right: auto;
@@ -25,16 +34,41 @@ header .container{
     background: radial-gradient(circle, #ff8c007c 5%, transparent 65%);
 }
 
-header .container img{
+header .containe_shadow img{
     width: 900px;
     height: 75vh;
+    user-select: none;
+}
+
+header .conteiner_right{
+    display: flex;
+    flex-direction: column;
+}
+
+header .btn_buy{
+    margin: 20px auto 0 auto;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff9c23;
+    font-size: 27px;
+    transition: all 0.15s ease-in-out;
+}
+
+header .btn_buy:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ff9c23;
 }
 
 header h2{
+    text-align: center;
     font-size: 45px;
     margin-right: 5%;
     margin-left: auto;
 }
+
+/* ============ Main ============ */
 
 .About_company{
     display: flex;
@@ -44,6 +78,7 @@ header h2{
     height: 500px;
     padding: 0 200px 0 200px;
     border-bottom: 1px solid #909090;
+    
 }
 
 .About_company .container ul{
@@ -67,11 +102,20 @@ header h2{
 .Slogan .container{
     display: flex;
     flex-direction: row;
-    padding: 0 180px;
+    padding: 0 100px;
 }
 
-.Slogan .container img{
-    width: 600px;
+.Slogan .container .imga{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 700px;
+    background: radial-gradient(circle, #FF006A 4%, transparent 70%);
+}
+
+.Slogan .container .imga img{
+    width: 700px;
     height: 600px;
 }
 
@@ -81,6 +125,7 @@ header h2{
     align-items: center;
     flex-direction: column;
     padding: 0 170px;
+    
 }
 
 .Slogan .container .text h2{
@@ -96,6 +141,7 @@ header h2{
 .Slogan .container .text p{
     font-size: 25px;
     text-align: center;
+    
 }
 
 .What_we_do{
@@ -107,12 +153,14 @@ header h2{
     min-height: 500px;
     padding: 0 0 20px 0;
     border-bottom: 1px solid #909090;
+    
 }
 
 .What_we_do .container{
     width: 90%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .What_we_do .container h2{
@@ -124,10 +172,20 @@ header h2{
 
 .What_we_do .container ul{
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.What_we_do .container li{
+    display: flex;
+    width: auto;
+    justify-content: center;
 }
 
 .What_we_do .container p{
-    text-align: start;
     margin: 15px 0 15px 0;
     font-size: 30px;
     font-weight: 300;
@@ -152,11 +210,12 @@ header h2{
     text-align: center;
     font-size: 35px;
     font-weight: 500;
+    
 }
 
 .Why_us .container ul{
     margin-top: 30px;
-    gap: 20px;
+    gap: 40px;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -167,28 +226,39 @@ header h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 230px;
-    height: 300px;
+    width: 300px;
+    height: 370px;
     border: 2px solid #FFF;
     border-radius: 20px;
+    transition: all 0.17s ease-in-out;
 }
+
+.Why_us .container li:hover{
+    transform: scale(0.9);
+    box-shadow: 0 0 10px #FFF;
+}
+
 
 .Why_us .container li .text_header{
     display: flex;
     align-items: center;
-    height: 20%;
+    height: 35%;
 }
 
 .Why_us .container li .text_main{
+    display: flex;
     height: 80%;
+    width: 95%;
+    
 }
 
 .Why_us .container li .text_header h3{
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .Why_us .container li .text_main p{
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
+    
 }

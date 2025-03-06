@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0 20px 0;
 }
 
 .brands{
@@ -16,4 +17,6 @@
 .brands img{
     width: 230px;
     height: 130px;
+    pointer-events: none;
+    user-select: none;
 }

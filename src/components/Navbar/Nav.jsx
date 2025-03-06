@@ -9,8 +9,8 @@ const Nav = () => {
         <nav>
             <img className='Logo' src={Logo} alt="Логотип" />
             <ul className="pages-list">
-                <li><Link to="/">Главная</Link></li>
-                <li><Link to="/catalog">Каталог</Link></li>
+                <li><Link to="/"><h1>Главная</h1></Link></li>
+                <li><Link to="/catalog"><h1>Каталог</h1></Link></li>
             </ul>
             <button className='profile-btn' type='button'>
                 <img src={Profile} alt="Профиль" />

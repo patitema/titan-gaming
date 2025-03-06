@@ -1,25 +1,30 @@
 import React from 'react';
-import '../assets/styles/General.css'
-import Nav from "../components/Navbar/Nav"
-import Footer from "../components/Footer/footer"
-import Brands from "../components/Brands/brands"
-import H_PC from "../assets/images/Header_pc.png"
-import T_PC from "../assets/images/Titan Gaming PC.png"
-
+import '../assets/styles/General.css';
+import Nav from "../components/Navbar/Nav";
+import Footer from "../components/Footer/footer";
+import Brands from "../components/Brands/brands";
+import H_PC from "../assets/images/Header_pc.png";
+import T_PC from "../assets/images/Titan Gaming PC.png";
 
 function General() {
     return (
         <div>
             <Nav />
             <header>
-                <div class="container">
-                    <img src={H_PC} alt=""></img>
+                <div className='container'>
+                    <div className="container_shadow">
+                        <img src={H_PC} alt="" />
+                    </div>
+                    <div className='conteiner_right'>
+                        <h2>Серия <span>HYPERBASHMAK 3</span> уже в продаже</h2>
+                        <button type='button' className='btn_buy'>Купить</button>
+                    </div>
                 </div>
-                <h2>Серия <span>HYPERBASHMAK 3</span> уже в продаже</h2>
+                
             </header>
             <main>
-                <div class="About_company">
-                    <div class="container">
+                <div className="About_company">
+                    <div className="container">
                         <ul>
                             <li><p>Titan Gaming — лидер в создании игровых ПК премиум-класса с 2015 года.
                         За 9 лет мы собрали более 50,000 систем для геймеров, стримеров и киберспортсменов
@@ -30,12 +35,12 @@ function General() {
                         </ul>
                     </div>
                 </div>
-                <div class="Slogan">
-                    <div class="container">
-                        <div class="img">
-                            <img src={T_PC} alt=""></img>
+                <div className="Slogan">
+                    <div className="container">
+                        <div className="imga">
+                            <img src={T_PC} alt="" />
                         </div>
-                        <div class="text">
+                        <div className="text">
                             <h2>Не играй. <span>Доминируй!</span></h2>
                             <p>Наши ПК — это не просто железо. Это оружие, 
                             созданное для тех, кто сражается за каждый кадр, каждый фраг, 
@@ -44,8 +49,8 @@ function General() {
                         </div>
                     </div>
                 </div>
-                <div class="What_we_do">
-                    <div class="container">
+                <div className="What_we_do">
+                    <div className="container">
                         <h2>Что мы делаем?</h2>
                         <ul>
                             <li><p>Собираем игровые ПК, которые бьют рекорды 
@@ -59,31 +64,31 @@ function General() {
                         </ul>
                     </div>
                 </div>
-                <div class="Why_us">
-                    <div class="container">
-                        <h2>Пчему мы? <br></br> Наши преимущества: </h2>
+                <div className="Why_us">
+                    <div className="container">
+                        <h2>Почему мы? <br /> Наши преимущества: </h2>
                         <ul>
                             <li>
-                                <div class="text_header"><h3>Качество</h3></div>
-                                <div class="text_main">
-                                    <p>Все пк собираются из новых и провереных комплектующих</p>
+                                <div className="text_header"><h3>Качество</h3></div>
+                                <div className="text_main">
+                                    <p>Все ПК собираются из новых и проверенных комплектующих</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="text_header"><h3>Стоимость</h3></div>
-                                <div class="text_main">
+                                <div className="text_header"><h3>Стоимость</h3></div>
+                                <div className="text_main">
                                     <p>Равновесная цена. ПК почти по себестоимости</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="text_header"><h3>Скромность</h3></div>
-                                <div class="text_main">
-                                    <p>Быстрая сборка и доставка</p>
-                                </div>
+                                    <div className="text_header"><h3>Скорость</h3></div>
+                                    <div className="text_main">
+                                        <p>Быстрая сборка и доставка</p>
+                                    </div>
                             </li>
                             <li>
-                                <div class="text_header"><h3>Рейтинг</h3></div>
-                                <div class="text_main">
+                                <div className="text_header"><h3>Рейтинг</h3></div>
+                                <div className="text_main">
                                     <p>Отличная репутация на рынке и большое количество отзывов</p>
                                 </div>
                             </li>

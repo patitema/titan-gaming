@@ -31,16 +31,13 @@ nav{
     transform: translateX(-50%);
 }
 
-.pages-list li{
-
-}
-
-.pages-list li a{
+.pages-list li a, h1{
     text-decoration: none;
     color: #FFF;
     font-size: 30px;
     transition: all 0.1s ease-in-out;
 }
+
 
 .pages-list li a:hover{
     text-shadow: 0 0 5px #FFF;
