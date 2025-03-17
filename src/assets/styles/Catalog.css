@@ -5,9 +5,11 @@ header{
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    border: none;
+    padding-bottom: 40px;
 }
 
-header .container_filters{
+header > .container_filters{
     display: flex;  
     flex-direction: column;
     justify-content:   space-around;
@@ -16,25 +18,43 @@ header .container_filters{
     border-radius: 20px;
 }
 
-header .container_filters ul{
+header > .container_filters > ul{
     display: flex;
     flex-direction: row;
     gap: 40px;
     justify-content: space-around;
 }
 
-header .container_filters_down{
+header > .container_filters > ul >li{
+    user-select: none;
+}
+
+header > .container_filters > ul >li:hover{
+    text-shadow: 0 0 5px #FFF;
+}
+
+header > .container_filters_down{
     display: flex;
     justify-content: center;
     padding: 10px 50px 10px 50px;
     background-color: #252525;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
-header .container_filters_down ul{
+header > .container_filters_down > ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 40px;
+}
+header > .container_filters_down > ul > li{
+    user-select: none;
+    font-size: 20px;
+    color: #AAA;
+    transition: all 0.15s ease-in-out;
+}
+
+header > .container_filters_down > ul > li:hover{
+    color: #FFF;
 }

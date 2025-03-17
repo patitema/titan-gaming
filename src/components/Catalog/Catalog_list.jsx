@@ -13,7 +13,177 @@ const CatalogList = () => {
                                 <h3>Bashmak</h3>
                             </div>
                             <div className='main_container'>
-                                <ul>
+                                <ul className='attrebutes'>
+                                    <li>
+                                        <p className='attr_name'>Процессор</p>
+                                        <p className='attr'>AMD Ryzen 5 5600G 3600 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Видеокарта</p>
+                                        <p className='attr'>AMD Radeon RX Vega 7 8 Гб</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Оперативная память</p>
+                                        <p className='attr'>16Гб DDR4 3000 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Диск SSD</p>
+                                        <p className='attr'>500 Гб CN600 Pro M.2</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Корпус</p>
+                                        <p className='attr'>POWERCASE MISTRAL X4 W</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Система</p>
+                                        <p className='attr'>Windows 10</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='head_container'>
+                                <img src={PC} alt="Bashmak" />
+                                <h3>Bashmak</h3>
+                            </div>
+                            <div className='main_container'>
+                                <ul className='attrebutes'>
+                                    <li>
+                                        <p className='attr_name'>Процессор</p>
+                                        <p className='attr'>AMD Ryzen 5 5600G 3600 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Видеокарта</p>
+                                        <p className='attr'>AMD Radeon RX Vega 7 8 Гб</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Оперативная память</p>
+                                        <p className='attr'>16Гб DDR4 3000 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Диск SSD</p>
+                                        <p className='attr'>500 Гб CN600 Pro M.2</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Корпус</p>
+                                        <p className='attr'>POWERCASE MISTRAL X4 W</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Система</p>
+                                        <p className='attr'>Windows 10</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='head_container'>
+                                <img src={PC} alt="Bashmak" />
+                                <h3>Bashmak</h3>
+                            </div>
+                            <div className='main_container'>
+                                <ul className='attrebutes'>
+                                    <li>
+                                        <p className='attr_name'>Процессор</p>
+                                        <p className='attr'>AMD Ryzen 5 5600G 3600 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Видеокарта</p>
+                                        <p className='attr'>AMD Radeon RX Vega 7 8 Гб</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Оперативная память</p>
+                                        <p className='attr'>16Гб DDR4 3000 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Диск SSD</p>
+                                        <p className='attr'>500 Гб CN600 Pro M.2</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Корпус</p>
+                                        <p className='attr'>POWERCASE MISTRAL X4 W</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Система</p>
+                                        <p className='attr'>Windows 10</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='head_container'>
+                                <img src={PC} alt="Bashmak" />
+                                <h3>Bashmak</h3>
+                            </div>
+                            <div className='main_container'>
+                                <ul className='attrebutes'>
+                                    <li>
+                                        <p className='attr_name'>Процессор</p>
+                                        <p className='attr'>AMD Ryzen 5 5600G 3600 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Видеокарта</p>
+                                        <p className='attr'>AMD Radeon RX Vega 7 8 Гб</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Оперативная память</p>
+                                        <p className='attr'>16Гб DDR4 3000 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Диск SSD</p>
+                                        <p className='attr'>500 Гб CN600 Pro M.2</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Корпус</p>
+                                        <p className='attr'>POWERCASE MISTRAL X4 W</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Система</p>
+                                        <p className='attr'>Windows 10</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='head_container'>
+                                <img src={PC} alt="Bashmak" />
+                                <h3>Bashmak</h3>
+                            </div>
+                            <div className='main_container'>
+                                <ul className='attrebutes'>
+                                    <li>
+                                        <p className='attr_name'>Процессор</p>
+                                        <p className='attr'>AMD Ryzen 5 5600G 3600 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Видеокарта</p>
+                                        <p className='attr'>AMD Radeon RX Vega 7 8 Гб</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Оперативная память</p>
+                                        <p className='attr'>16Гб DDR4 3000 МГц</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Диск SSD</p>
+                                        <p className='attr'>500 Гб CN600 Pro M.2</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Корпус</p>
+                                        <p className='attr'>POWERCASE MISTRAL X4 W</p>
+                                    </li>
+                                    <li>
+                                        <p className='attr_name'>Система</p>
+                                        <p className='attr'>Windows 10</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='head_container'>
+                                <img src={PC} alt="Bashmak" />
+                                <h3>Bashmak</h3>
+                            </div>
+                            <div className='main_container'>
+                                <ul className='attrebutes'>
                                     <li>
                                         <p className='attr_name'>Процессор</p>
                                         <p className='attr'>AMD Ryzen 5 5600G 3600 МГц</p>

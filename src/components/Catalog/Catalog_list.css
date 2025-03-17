@@ -9,6 +9,7 @@
 
 .catalog{
     width: 100%;
+    gap: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,19 +18,28 @@
 }
 
 .catalog > li{
-    width: 600px;
-    height: 1248px;
+    width: 450px;
+    height: 755px;
     background-color: #252525;
     border-radius: 40px;
+    transition: all 0.15s ease-in-out;
+}
+
+.catalog > li:hover{
+    box-shadow: 0 0 5px #FFF;
 }
 
 .head_container{
-    height: 40%;
-    border-bottom: solid 1px #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
 }
 
 .head_container img{
-    size: 300px;
+    width: 250px;
+    height: 250px;
 }
 
 .head_container h3{
@@ -37,25 +47,26 @@
 }
 
 .main_container{
-    height: 60%;
+    height: auto;
     width: 100%;
 }
 
 .attrebutes{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .attrebutes li{
     gap: 20px;
-    border-bottom: solid 1px #FFF;
     border-top: solid 1px #FFF;
+    padding: 5px 0 5px 20px;
+
 }
 
 .attr_name{
     color: #CDCDCD;
     font-size: 20px;
+    user-select: none;
 }
 
 .attr{
@@ -64,12 +75,28 @@
 }
 
 .page_list{
+    margin:20px 0 20px 0;
     display: flex;
     flex-direction: row;
+    gap: 10px;
 }
 
 .page_list button{
     width: 40px;
     height: 40px;
-    color: #454545;
+    background-color: #454545;
+    border: none;
+    border-radius: 50px;
+    color: #FFF;
+    font-size: 20px;
+    transition: all 0.15s ease-in-out;
+}
+
+.page_list button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 2px #FFF;
+}
+
+.page_list .current{
+    color: #555;
 }
