@@ -19,14 +19,10 @@
 
 .catalog > li{
     width: 450px;
-    height: 755px;
+    height: 870px;
     background-color: #252525;
     border-radius: 40px;
     transition: all 0.15s ease-in-out;
-}
-
-.catalog > li:hover{
-    box-shadow: 0 0 5px #FFF;
 }
 
 .head_container{
@@ -40,6 +36,11 @@
 .head_container img{
     width: 250px;
     height: 250px;
+    transition: all 0.2s ease-in;
+}
+
+.head_container:hover img{
+    transform: scale(1.2);
 }
 
 .head_container h3{
@@ -49,6 +50,21 @@
 .main_container{
     height: auto;
     width: 100%;
+}
+
+.main_container button{
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFA246;
+    font-size: 26px;
+    margin: 10px 75px;
+    transition: all 0.1s ease-in-out;
+}
+
+.main_container button:hover{
+    box-shadow: 0 0 5px #FFA246;
 }
 
 .attrebutes{

@@ -39,6 +39,7 @@ const CatalogList = () => {
                                         <p className='attr'>Windows 10</p>
                                     </li>
                                 </ul>
+                                <button>50 000₽</button>
                             </div>
                         </li>
                         <li>
