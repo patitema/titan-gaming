@@ -35,25 +35,53 @@ nav{
     text-decoration: none;
     color: #FFF;
     font-size: 30px;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.05s ease-in-out;
 }
 
 
 .pages-list li a:hover{
-    text-shadow: 0 0 5px #FFF;
+    text-shadow: 0 0 3px #FF7020;
+    color: #FF7020;
 }
 
-.profile-btn{
-    border: none;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    margin-left: auto;
+.Nav-btns{
+    width: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-right: 20px;
 }
 
-.profile-btn img{
+.profile-btn svg{
     width: 50px;
     height: 50px;
-    filter: drop-shadow(0 0 1px #FFF);
+    color: white;
+}
+
+
+.Karzina-btn, .profile-btn{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.Karzina-btn svg{
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+
+.Karzina-btn:hover svg{
+    filter: drop-shadow(0 0 2px #FF7020);
+    color: #FF7020;
+}
+
+.profile-btn:hover svg{
+    filter: drop-shadow(0 0 2px #FF7020);
+    color: #FF7020;
 }

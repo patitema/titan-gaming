@@ -37,6 +37,13 @@ code {
     monospace;
 }
 
+input{
+  accent-color: #A00;
+  border: none;
+  border-radius: 2px;
+  font-family: "Swanston";
+}
+
 img{
   pointer-events: none;
   user-select: none;

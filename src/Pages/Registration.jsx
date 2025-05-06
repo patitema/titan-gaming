@@ -1,22 +1,23 @@
 import React from 'react';
-import '../assets/styles/Login.css';
+import '../assets/styles/Registration.css';
 import Nav from "../components/Navbar/Nav";
 import Footer from "../components/Footer/footer";
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Registration() {
     return (
         <div>
             <Nav />
             <main>
                 <div className='main-container'>
-                    <h3>Вход</h3>
+                    <h3>Регистрация</h3>
                     <form id="login-form" action="" method='Post'>
-                        <input type="text" placeholder='login/email'/>
+                        <input type="email" placeholder='email'/>
                         <input type="password" placeholder='password'/>
-                        <button type='submit' id='login-btn'>Войти</button>
-                        <Link to="/registration">
-                            <button type='button' id='change-reg-btn'>Зарегистрироваться</button>
+                        <input type="text" placeholder='name'/>
+                        <button type='submit' id='reg-btn'>Зарегистрироваться</button>
+                        <Link to="/login">
+                            <button type='button' id='change-log-btn'>Войти</button>
                         </Link>
                         
                     </form>
@@ -27,4 +28,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Registration;

@@ -1,4 +1,5 @@
 .container_main{
+    position: relative;
     width: 95%;
     height: auto;
     display: flex;
@@ -40,7 +41,7 @@
 }
 
 .head_container:hover img{
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 .head_container h3{
@@ -110,7 +111,7 @@
 
 .page_list button:hover{
     transform: scale(1.1);
-    box-shadow: 0 0 2px #FFF;
+    color: #FF7020;
 }
 
 .page_list .current{

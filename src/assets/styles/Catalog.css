@@ -31,7 +31,8 @@ header > .container_filters > ul >li h2{
 }
 
 header > .container_filters > ul >li h2:hover{
-    text-shadow: 0 0 5px #FFF;
+    text-shadow: 0 0 2px #FF7020;
+    color: #FF7020;
 }
 
 header > .container_filters_down{
@@ -57,5 +58,11 @@ header > .container_filters_down > ul > li{
 }
 
 header > .container_filters_down > ul > li:hover{
-    color: #FFF;
+    color: #FF7020;
+}
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

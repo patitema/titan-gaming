@@ -1,7 +1,3 @@
-main{
-    width: 100%;
-}
-
 .main-container{
     display: flex;
     justify-content: center;
@@ -9,7 +5,6 @@ main{
     flex-direction: column;
     height: 90vh;
 }
-
 
 h3{
     font-size: 30px;
@@ -40,25 +35,25 @@ h3{
     border-radius: 5px;
 }
 
-#login-btn{
+#reg-btn{
     background-color: #F5A020;
     font-size: 25px;
     color: #151515;
     transition: all 0.15s ease-in-out;
 }
 
-#change-reg-btn{
+#change-log-btn{
     background-color: #303030;
     color: white;
     font-size: 30px;
     transition: all 0.15s ease-in-out;
 }
 
-#login-btn:hover{
+#reg-btn:hover{
     transform: scale(1.05);
     box-shadow: 0 0 5px #F5A020;
 }
 
-#change-reg-btn:hover{
+#change-log-btn:hover{
     transform: scale(1.05);
 }
