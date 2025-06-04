@@ -1,13 +1,10 @@
 import React from 'react';
 import '../assets/styles/Registration.css';
-import Nav from "../components/Navbar/Nav";
-import Footer from "../components/Footer/footer";
 import { Link } from 'react-router-dom';
 
 function Registration() {
     return (
         <div>
-            <Nav />
             <main>
                 <div className='main-container'>
                     <h3>Регистрация</h3>
@@ -23,7 +20,6 @@ function Registration() {
                     </form>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

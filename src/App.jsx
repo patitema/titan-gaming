@@ -1,0 +1,33 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './Layout';
+
+// Pages
+import General from './Pages/General';
+import Catalog from './Pages/Catalog';
+import Login from './Pages/Login';
+import Profile from './Pages/Profile';
+import Product from './Pages/Product';
+import Registration from './Pages/Registration';
+import Karzina from './Pages/Karzina';
+import NotFound from './Pages/404';
+
+function App() {
+    return (
+        <Routes>
+        <Route element={<Layout />}>
+            <Route path="/" element={<General />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/karzina" element={<Karzina />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+        </Routes>
+    );
+}
+
+export default App;

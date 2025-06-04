@@ -1,13 +1,10 @@
 import React from 'react';
 import '../assets/styles/Catalog.css'
-import Nav from "../components/Navbar/Nav"
-import Footer from "../components/Footer/footer";
 import CatalogList from "../components/Catalog/Catalog_list"
 
 function Catalog() {
     return (
         <div>
-            <Nav />
             <header>
                 <div className='container_filters'>
                     <ul>
@@ -27,7 +24,6 @@ function Catalog() {
             <main>
                 <CatalogList />
             </main>
-            <Footer />
         </div>
     );
 }

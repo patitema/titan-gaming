@@ -1,13 +1,10 @@
 import React from 'react';
 import '../assets/styles/Login.css';
-import Nav from "../components/Navbar/Nav";
-import Footer from "../components/Footer/footer";
 import { Link } from 'react-router-dom';
 
 function Login() {
     return (
         <div>
-            <Nav />
             <main>
                 <div className='main-container'>
                     <h3>Вход</h3>
@@ -22,7 +19,6 @@ function Login() {
                     </form>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

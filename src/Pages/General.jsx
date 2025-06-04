@@ -1,7 +1,5 @@
 import React from 'react';
 import '../assets/styles/General.css';
-import Nav from "../components/Navbar/Nav";
-import Footer from "../components/Footer/footer";
 import Brands from "../components/Brands/brands";
 import H_PC from "../assets/images/Header_pc.png";
 import T_PC from "../assets/images/Titan Gaming PC.png";
@@ -9,7 +7,6 @@ import T_PC from "../assets/images/Titan Gaming PC.png";
 function General() {
     return (
         <div>
-            <Nav />
             <header>
                 <div className='container'>
                     <div className="container_shadow">
@@ -97,7 +94,6 @@ function General() {
                 </div>
                 <Brands />
             </main>
-            <Footer />
         </div>
     );
 }

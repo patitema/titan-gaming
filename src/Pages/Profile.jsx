@@ -1,13 +1,11 @@
 import React from 'react';
 import '../assets/styles/Profile.css';
-import Nav from "../components/Navbar/Nav";
-import Footer from "../components/Footer/footer";
 import icons from "../assets/images/icons.svg"
+import PC from '../assets/images/Bashmak.png'
 
 function Profile() {
     return (
         <div>
-            <Nav />
             <main>
                 <div className='profile-container'>
                     <h3>Личный кабинет</h3>
@@ -43,13 +41,12 @@ function Profile() {
                     <h2>Вы смотрели:</h2>
                     <ul className='list-watched'>
                         <li>
-                            <img src="../assets/images/Bashmak.png" alt="" />
+                            <img src={PC} alt="Bashmak" />
                             <p>Bashmak</p>
                         </li>
                     </ul>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

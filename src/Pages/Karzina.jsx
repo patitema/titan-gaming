@@ -1,12 +1,9 @@
 import React from 'react';
 import '../assets/styles/Karzina.css';
-import Nav from "../components/Navbar/Nav";
-import Footer from "../components/Footer/footer";
 
 function Karzina() {
     return (
         <div>
-            <Nav />
             <main>
                 <div className='offer-container'>
                     <div className='form-part'>
@@ -48,7 +45,6 @@ function Karzina() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

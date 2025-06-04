@@ -1,9 +1,9 @@
 import React from 'react';
 import './Catalog_list.css';
-// import { Link } from 'react-router-dom';
+
 import PC from '../../assets/images/Bashmak.png'
 
-const CatalogList = () => {
+function CatalogList() {
     return (
         <div className='container_main'>
                     <ul className='catalog'>
@@ -219,10 +219,10 @@ const CatalogList = () => {
                         </li>
                     </ul>
                     <ul className='page_list'>
-                        <li><button>1</button></li>
-                        <li><button>2</button></li>
-                        <li><button>3</button></li>
-                        <li><button>...</button></li>
+                        <li><button type='button'>1</button></li>
+                        <li><button type='button'>2</button></li>
+                        <li><button type='button'>3</button></li>
+                        <li><button type='button'>...</button></li>
                     </ul>
                 </div>
     );
