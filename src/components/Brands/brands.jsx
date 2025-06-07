@@ -1,24 +1,17 @@
 import React from 'react';
 import './brands.css';
-import MSI from "../../assets/images/msi-brand.png";
-import ASUS from "../../assets/images/Asus-brand.png";
-import Intel from "../../assets/images/Intel-brand.png";
-import AMD from "../../assets/images/Amd-brand.png";
-import Nvidia from "../../assets/images/Nvidia-brand.png";
-import Gigabyte from "../../assets/images/Gigabyte-brand.png";
-import GSkill from "../../assets/images/Gskill-brand.png";
 
 const Footer = () => {
     return (
         <div className="container_br">
             <ul className="brands">
-                <li><img src={MSI} alt="MSI" /></li>
-                <li><img src={ASUS} alt="ASUS" /></li>
-                <li><img src={Intel} alt="Intel" /></li>
-                <li><img src={AMD} alt="AMD" /></li>
-                <li><img src={Nvidia} alt="Nvidia" /></li>
-                <li><img src={Gigabyte} alt="Gigabyte" /></li>
-                <li><img src={GSkill} alt="GSkill" /></li>
+                <li><img src="/images/msi-brand.png" alt="MSI" /></li>
+                <li><img src="/images/Asus-brand.png" alt="ASUS" /></li>
+                <li><img src="/images/Intel-brand.png" alt="Intel" /></li>
+                <li><img src="/images/Amd-brand.png" alt="AMD" /></li>
+                <li><img src="/images/Nvidia-brand.png" alt="Nvidia" /></li>
+                <li><img src="/images/Gigabyte-brand.png" alt="Gigabyte" /></li>
+                <li><img src="/images/Gskill-brand.png" alt="GSkill" /></li>
             </ul>
         </div>
     );

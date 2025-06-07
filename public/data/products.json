@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Bashmak",
+        "processor": "AMD Ryzen 5 5600G 3600 МГц",
+        "videoCard": "AMD Radeon RX Vega 7 8 Гб",
+        "ram": "16Гб DDR4 3000 МГц",
+        "drive": "500 Гб CN600 Pro M.2",
+        "case": "POWERCASE MISTRAL X4 W",
+        "system": "Windows 10",
+        "price": 50000,
+        "image": "/images/Bashmak.png",
+        "type" : "optimal",
+        "popularity": 1000
+    },
+    {
+        "id": 2,
+        "name": "Bashmak-Super",
+        "processor": "AMD Ryzen 5 5600G 3600 МГц",
+        "videoCard": "AMD Radeon RX Vega 7 8 Гб",
+        "ram": "16Гб DDR4 3000 МГц",
+        "drive": "500 Гб CN600 Pro M.2",
+        "case": "POWERCASE MISTRAL X4 W",
+        "system": "Windows 10",
+        "price": 100000,
+        "image": "/images/Titan Gaming PC.png",
+        "type" : "gaming",
+        "popularity": 1000
+    },
+    {
+        "id": 3,
+        "name": "Bashmak-Giga",
+        "processor": "AMD Ryzen 5 5600G 3600 МГц",
+        "videoCard": "AMD Radeon RX Vega 7 8 Гб",
+        "ram": "16Гб DDR4 3000 МГц",
+        "drive": "500 Гб CN600 Pro M.2",
+        "case": "POWERCASE MISTRAL X4 W",
+        "system": "Windows 10",
+        "price": 150000,
+        "image": "/images/Header_pc.png",
+        "type" : "gaming",
+        "popularity": 1500
+    },
+    {
+        "id": 4,
+        "name": "Bashmak-Super-Giga",
+        "processor": "AMD Ryzen 5 5600G 3600 МГц",
+        "videoCard": "AMD Radeon RX Vega 7 8 Гб",
+        "ram": "16Гб DDR4 3000 МГц",
+        "drive": "500 Гб CN600 Pro M.2",
+        "case": "POWERCASE MISTRAL X4 W",
+        "system": "Windows 10",
+        "price": 150000,
+        "image": "/images/Header_pc.png",
+        "type" : "porwerful",
+        "popularity": 500
+    }
+]
