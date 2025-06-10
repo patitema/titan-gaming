@@ -11,6 +11,7 @@ import Product from './Pages/Product/Product';
 import Registration from './Pages/Registration/Registration';
 import Karzina from './Pages/Karzina/Karzina';
 import NotFound from './Pages/404/404';
+import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 function App() {
     return (
@@ -19,7 +20,7 @@ function App() {
                 <Route path="/" element={<General />} />
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/registration" element={<Registration />} />
                 <Route path="/karzina" element={<Karzina />} />

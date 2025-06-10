@@ -1,8 +1,23 @@
 import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+
 
 const Nav = () => {
+    const navigate = useNavigate();
+    const { user } = useAuth();
+
+    const handleProfileClick = () => {
+        if (user) {
+        // если есть пользователь — идём в профиль
+        navigate("/profile");
+        } else {
+        // иначе — на страницу логина
+        navigate("/login");
+        }
+    };
     return (
         <nav>
             <img className='Logo' src="/images/Logo.png" alt="Логотип" />
@@ -19,13 +34,11 @@ const Nav = () => {
                         </svg>
                     </button>
                 </Link>
-                <Link  to="/profile">
-                    <button className="profile-btn" type='button'>
+                    <button className="profile-btn" type='button' onClick={handleProfileClick}>
                         <svg width="100" height="100">
                             <use href={`/images/icons.svg#icon-profile`}></use>
                         </svg>
                     </button>
-                </Link>
                 
             </div>
         </nav>

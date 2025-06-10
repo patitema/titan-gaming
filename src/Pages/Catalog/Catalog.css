@@ -102,6 +102,11 @@ main{
     background-color: transparent;
 }
 
+.product-card a{
+    text-decoration: none;
+    color: #FFF;
+}
+
 .container-card{
     transition: all 0.2s ease-in-out;
     width:  450px;
