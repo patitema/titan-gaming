@@ -2,8 +2,8 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 
 const AuthContext = createContext();
 
-const USERS_KEY = "tg-users";
-const SESSION_KEY = "tg-session";
+const USERS_KEY = "users";
+const SESSION_KEY = "session";
 
 function readUsers() {
     try {
@@ -20,7 +20,6 @@ function writeUsers(users) {
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
 
-  // При монтировании читаем сессию
 useEffect(() => {
     const sess = localStorage.getItem(SESSION_KEY);
     if (sess) {
@@ -28,22 +27,18 @@ useEffect(() => {
     }
 }, []);
 
-  // Регистрация нового пользователя
 const register = ({ email, password, name }) => {
     const users = readUsers();
-    // Проверяем, нет ли уже такого email
     if (users.find(u => u.email === email)) {
         throw new Error("Пользователь с таким email уже существует");
     }
     const newUser = { email, password, name };
     users.push(newUser);
     writeUsers(users);
-    // Сразу логиним после регистрации
     localStorage.setItem(SESSION_KEY, JSON.stringify(newUser));
     setUser(newUser);
 };
 
-  // Вход
 const login = ({ email, password }) => {
     const users = readUsers();
     const found = users.find(u => u.email === email && u.password === password);
@@ -54,14 +49,24 @@ const login = ({ email, password }) => {
     setUser(found);
 };
 
-  // Выход
 const logout = () => {
     localStorage.removeItem(SESSION_KEY);
     setUser(null);
 };
 
+const updateUser = (updates) => {
+    if (!user) return;
+    const updated = { ...user, ...updates };
+    localStorage.setItem(SESSION_KEY, JSON.stringify(updated));
+    const users = readUsers().map(u =>
+        u.email === user.email ? updated : u
+    );
+    writeUsers(users);
+    setUser(updated);
+};
+
 return (
-    <AuthContext.Provider value={{ user, register, login, logout }}>
+    <AuthContext.Provider value={{ user, register, login, logout, updateUser }}>
         {children}
     </AuthContext.Provider>
 );
