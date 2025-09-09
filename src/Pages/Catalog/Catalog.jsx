@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import './Catalog.css'
 import { renderProducts, initializeSorting } from '../../context/products';
 import { useLocation } from "react-router-dom";
-import { useProducts } from "../context/ProductsContext";
-import { useCart } from "../context/CartContext";
+import { useProducts } from "../../context/ProductsProvider";
+import { useCart } from "../../context/CartContext";
 
 function Catalog() {
     const { products } = useProducts();

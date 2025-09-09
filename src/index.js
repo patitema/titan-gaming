@@ -5,17 +5,17 @@ import App from './App';
 import './assets/styles/index.css';
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
-import { ProductsContext } from "./context/ProductsContext";
+import { ProductsProvider } from "./context/ProductsProvider";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AuthProvider>
-    <ProductsContext>
+    <ProductsProvider>
       <CartProvider>
         <Router>
           <App />
         </Router>
       </CartProvider>
-    </ProductsContext>
+    </ProductsProvider>
   </AuthProvider>
 );

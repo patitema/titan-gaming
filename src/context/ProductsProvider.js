@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 
 // Обёртка для провайдера
-const ProductsContext = createContext();
+export const ProductsContext = createContext();
 
 // Функция для загрузки и фильтрации товаров
 async function fetchProductsFromJson() {
