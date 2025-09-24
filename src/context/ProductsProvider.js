@@ -5,7 +5,7 @@ export const ProductsContext = createContext();
 
 // Функция для загрузки и фильтрации товаров
 async function fetchProductsFromJson() {
-    const res = await fetch("/data/products.json");
+    const res = await fetch("http://localhost:5000/api/products");
     const json = await res.json();
     return json.products || json;
 }
