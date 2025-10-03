@@ -23,19 +23,16 @@ export function initializeSorting() {
 
 function normalizeImageUrl(img) {
   if (!img) return "";
-  // если уже абсолютный URL — используем как есть
   try {
     const u = new URL(img);
     return u.href;
   } catch (e) {
-    // относительный путь — добавляем origin
     if (!img.startsWith("/")) img = "/" + img;
     return window.location.origin + img;
   }
 }
 
 function normalizeProduct(p) {
-  // Сервер у нас возвращает поля: p_id, p_name, processor, videoCard, ram, drive, casePC, system, price, image, type, popularity
   return {
     id: p.p_id ?? p.id ?? null,
     name: p.p_name ?? p.name ?? "",
@@ -69,7 +66,6 @@ export async function renderProducts() {
   const params = new URLSearchParams(window.location.search);
   const filter = params.get("filter") || "";
 
-  // краткий индикатор загрузки
   productList.innerHTML = "<li>Загрузка...</li>";
 
   try {
@@ -78,9 +74,7 @@ export async function renderProducts() {
     const payload = await res.json();
 
     const raw = Array.isArray(payload) ? payload : (payload.products ?? payload);
-
     const allProducts = (Array.isArray(raw) ? raw : []).map(normalizeProduct);
-
     const products = filter ? allProducts.filter(p => p.type === filter) : allProducts;
 
     if (currentSortKey === "price-asc") {
@@ -91,16 +85,13 @@ export async function renderProducts() {
       products.sort((a, b) => (Number(b.popularity) || 0) - (Number(a.popularity) || 0));
     }
 
-    productList.innerHTML = "";
     if (!products.length) {
       productList.innerHTML = "<li>Товары не найдены</li>";
       return;
     }
 
-    products.forEach((product) => {
-      const li = document.createElement("li");
-      li.className = "product-card";
-      li.innerHTML = `
+    productList.innerHTML = products.map(product => `
+      <li class="product-card">
         <a href="/product/${product.id}">
           <div class="container-card">
             <div class="head_container">
@@ -109,38 +100,20 @@ export async function renderProducts() {
             </div>
             <div class="main_container">
               <ul class="attributes">
-                <li class="attribute">
-                  <p class="attr_name">Процессор</p>
-                  <p class="attr">${escapeHtml(product.processor)}</p>
-                </li>
-                <li class="attribute">
-                  <p class="attr_name">Видеокарта</p>
-                  <p class="attr">${escapeHtml(product.videoCard)}</p>
-                </li>
-                <li class="attribute">
-                  <p class="attr_name">Оперативная память</p>
-                  <p class="attr">${escapeHtml(product.ram)}</p>
-                </li>
-                <li class="attribute">
-                  <p class="attr_name">Диск SSD</p>
-                  <p class="attr">${escapeHtml(product.drive)}</p>
-                </li>
-                <li class="attribute">
-                  <p class="attr_name">Корпус</p>
-                  <p class="attr">${escapeHtml(product.case)}</p>
-                </li>
-                <li class="attribute">
-                  <p class="attr_name">Система</p>
-                  <p class="attr">${escapeHtml(product.system)}</p>
-                </li>
+                <li class="attribute"><p class="attr_name">Процессор</p><p class="attr">${escapeHtml(product.processor)}</p></li>
+                <li class="attribute"><p class="attr_name">Видеокарта</p><p class="attr">${escapeHtml(product.videoCard)}</p></li>
+                <li class="attribute"><p class="attr_name">Оперативная память</p><p class="attr">${escapeHtml(product.ram)}</p></li>
+                <li class="attribute"><p class="attr_name">Диск SSD</p><p class="attr">${escapeHtml(product.drive)}</p></li>
+                <li class="attribute"><p class="attr_name">Корпус</p><p class="attr">${escapeHtml(product.case)}</p></li>
+                <li class="attribute"><p class="attr_name">Система</p><p class="attr">${escapeHtml(product.system)}</p></li>
               </ul>
               <button>${Number(product.price).toLocaleString('ru-RU')}₽</button>
             </div>
           </div>
         </a>
-      `;
-      productList.appendChild(li);
-    });
+      </li>
+    `).join('');
+    
   } catch (finalErr) {
     console.error("Ошибка рендеринга товаров:", finalErr);
     productList.innerHTML = "<li>Ошибка загрузки товаров</li>";

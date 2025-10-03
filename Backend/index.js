@@ -6,20 +6,16 @@ const pool = require('./db');
 
 const app = express();
 
-// --- конфиги из .env
 const PORT = process.env.PORT || 5000;
 const IMAGES_DIR = path.join(__dirname, process.env.IMAGES_DIR || 'images');
 const IMAGES_URL = process.env.IMAGES_URL || '/images';
 const PRODUCTS_TABLE = process.env.PRODUCTS_TABLE || 'products';
 
-// middlewares
 app.use(cors());
 app.use(express.json());
 
-// статическая раздача картинок
 app.use(IMAGES_URL, express.static(IMAGES_DIR));
 
-// API products
 app.get('/api/products', async (req, res) => {
   try {
     const sql = `
@@ -50,7 +46,6 @@ app.get('/api/products', async (req, res) => {
   }
 });
 
-// single product
 app.get('/api/products/:p_id', async (req, res) => {
   try {
     const [rows] = await pool.query(

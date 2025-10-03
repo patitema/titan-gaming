@@ -12,7 +12,6 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
     "react-scripts": "5.0.1",
-    "titan-gaming": "file:",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -41,18 +40,5 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^3.0.5"
-  },
-  "description": "",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/patitema/titan-gaming.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/patitema/titan-gaming/issues"
-  },
-  "homepage": "https://github.com/patitema/titan-gaming#readme"
+  }
 }

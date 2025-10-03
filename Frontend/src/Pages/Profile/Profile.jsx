@@ -63,11 +63,6 @@ function Profile() {
                                 onChange={handleChange}
                                 readOnly={false}
                             />
-                            <button type="button" className="edit-btn">
-                                <svg width="16" height="16">
-                                <use href="/images/icons.svg#icon-edit" />
-                                </svg>
-                            </button>
                             </li>
                         ))}
                         </ul>
