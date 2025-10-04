@@ -20,7 +20,7 @@ app.get('/api/products', async (req, res) => {
   try {
     const sql = `
       SELECT 
-        p_id, p_name, processor, videoCard, ram, drive, casePC, system,
+        p_id, p_name, processor, videoCard, ram, drive, casePC, \`system\`,
         price, image, type, popularity
       FROM ${PRODUCTS_TABLE}
       ORDER BY p_id ASC

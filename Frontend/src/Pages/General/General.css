@@ -6,7 +6,6 @@ Nav{
     width: 100%;
 }
 
-/* ============ Header ============ */
 header{
     margin: 0 auto;
     width: 100%;
@@ -22,21 +21,21 @@ header .container{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    width: 90%;
+    width: 100%;
     padding: 0 0px 0 0px;
 }
 
 header .container_shadow{
-    width: 50%;
+    width: 60%;
     margin-left: 5%;
     margin-right: auto;
-    padding: 40px 0 40px 0;
+    padding: 40px 0 20px 0;
     background: radial-gradient(circle, #ff8c007c 5%, transparent 65%);
 }
 
 header .containe_shadow img{
-    width: 900px;
-    height: 75vh;
+    width: 400px;
+    height: auto;
     user-select: none;
 }
 
@@ -68,7 +67,6 @@ header h2{
     margin-left: auto;
 }
 
-/* ============ Main ============ */
 
 .About_company{
     display: flex;
