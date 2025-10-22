@@ -1,133 +1,148 @@
 nav {
-  width: 100%;
-  height: 60px;
-  padding: 10px 0;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  position: relative;
-  box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
 }
 
 /* логотип (ссылка) */
 .logo-link {
-  margin-left: 20px;
-  margin-right: auto;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
+    margin-left: 20px;
+    margin-right: auto;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .Logo {
-  width: 230px;
-  height: 40px;
-  cursor: pointer;
-  transition: filter 0.15s ease-in-out, transform 0.15s ease;
-  display: block;
+    width: 230px;
+    height: 40px;
+    cursor: pointer;
+    transition: filter 0.15s ease-in-out, transform 0.15s ease;
+    display: block;
 }
 
 .Logo:hover {
-  filter: drop-shadow(0 0 4px #fff);
-  transform: translateY(-1px);
+    filter: drop-shadow(0 0 4px #fff);
+    transform: translateY(-1px);
 }
 
 /* центральная навигация — центрируем относительно родителя */
 .pages-list {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  z-index: 2;
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    z-index: 2;
 }
 
 /* ссылки в списке страниц */
 .pages-list li {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .pages-list li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-  line-height: 1;
-  transition: color 0.12s ease, text-shadow 0.12s ease;
-  display: inline-block;
-  padding: 6px 4px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    transition: color 0.12s ease, text-shadow 0.12s ease;
+    display: inline-block;
+    padding: 6px 4px;
 }
 
 /* hover/focus состояния */
 .pages-list li a:hover,
 .pages-list li a:focus {
-  text-shadow: 0 0 6px #ff7020;
-  color: #ff7020;
-  outline: none;
+    text-shadow: 0 0 6px #ff7020;
+    color: #ff7020;
+    outline: none;
 }
 
 /* область кнопок справа */
 .Nav-btns {
-  margin-left: auto;
-  margin-right: 20px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 /* корзина — ссылка (семантика) */
 .karzina-link {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  justify-content: center;
-  align-items: end;
-  background: transparent;
-  border-radius: 6px;
-  text-decoration: none;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: end;
+    background: transparent;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
 /* кнопка профиля */
 .profile-btn {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  padding: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 0;
+    position: relative;
 }
 
 /* общий класс для svg-иконок */
 .icon {
-  display: block;
-  width: 30px;
-  height: 30px;
-  color: #fff;
-  transition: filter 0.12s ease, color 0.12s ease;
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    transition: filter 0.12s ease, color 0.12s ease;
 }
 
 /* специфичные размеры, если нужно */
 .icon-karzina {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .icon-profile {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 /* hover эффекты на svg внутри кнопок/ссылок */
 .karzina-link:hover .icon,
 .profile-btn:hover .icon {
-  filter: drop-shadow(0 0 6px #ff7020);
-  color: #ff7020;
+    filter: drop-shadow(0 0 6px #ff7020);
+    color: #ff7020;
 }
 
+/* индикатор авторизации */
+.profile-indicator {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    color: transparent;
+}

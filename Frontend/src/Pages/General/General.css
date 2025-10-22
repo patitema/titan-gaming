@@ -1,12 +1,12 @@
-h1{
+h1 {
     text-align: center;
 }
 
-Nav{
+Nav {
     width: 100%;
 }
 
-header{
+header {
     margin: 0 auto;
     width: 100%;
     height: 93vh;
@@ -15,7 +15,7 @@ header{
     border-bottom: solid 1px #909090;
 }
 
-header .container{
+header .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,7 +25,7 @@ header .container{
     padding: 0 0px 0 0px;
 }
 
-header .container_shadow{
+header .container_shadow {
     width: 60%;
     margin-left: 5%;
     margin-right: auto;
@@ -33,18 +33,18 @@ header .container_shadow{
     background: radial-gradient(circle, #ff8c007c 5%, transparent 65%);
 }
 
-header .containe_shadow img{
+header .containe_shadow img {
     width: 400px;
     height: auto;
     user-select: none;
 }
 
-header .conteiner_right{
+header .conteiner_right {
     display: flex;
     flex-direction: column;
 }
 
-header .btn_buy{
+header .btn_buy {
     margin: 20px auto 0 auto;
     width: 200px;
     height: 50px;
@@ -55,20 +55,19 @@ header .btn_buy{
     transition: all 0.15s ease-in-out;
 }
 
-header .btn_buy:hover{
+header .btn_buy:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px #ff9c23;
 }
 
-header h2{
+header h2 {
     text-align: center;
     font-size: 45px;
     margin-right: 5%;
     margin-left: auto;
 }
 
-
-.About_company{
+.About_company {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,73 +75,70 @@ header h2{
     height: 500px;
     padding: 0 200px 0 200px;
     border-bottom: 1px solid #909090;
-    
 }
 
-.About_company .container ul{
+.About_company .container ul {
     list-style: none;
 }
 
-.About_company .container li{
+.About_company .container li {
     margin: 35px 0 35px 0;
 }
 
-.About_company .container p{
+.About_company .container p {
     font-size: 35px;
     text-align: center;
 }
 
-.Slogan{
+.Slogan {
     padding: 50px 0 50px 0;
     border-bottom: 1px solid #909090;
 }
 
-.Slogan .container{
+.Slogan .container {
     display: flex;
     flex-direction: row;
     padding: 0 100px;
 }
 
-.Slogan .container .imga{
+.Slogan .container .imga {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 800px;
     height: 700px;
-    background: radial-gradient(circle, #FF006A 4%, transparent 70%);
+    background: radial-gradient(circle, #ff006a 4%, transparent 70%);
 }
 
-.Slogan .container .imga img{
+.Slogan .container .imga img {
     width: 700px;
     height: 600px;
 }
 
-.Slogan .container .text{
+.Slogan .container .text {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 0 170px;
-    
 }
 
-.Slogan .container .text h2{
+.Slogan .container .text h2 {
     font-size: 40px;
     text-align: center;
     margin: 0 auto 20px auto;
 }
 
-.Slogan .container .text span{
+.Slogan .container .text span {
     color: #ffbb00;
 }
 
-.Slogan .container .text p{
+.Slogan .container .text p {
     font-size: 25px;
     text-align: center;
-    
 }
 
-.What_we_do{
+.What_we_do {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,24 +147,23 @@ header h2{
     min-height: 500px;
     padding: 0 0 20px 0;
     border-bottom: 1px solid #909090;
-    
 }
 
-.What_we_do .container{
+.What_we_do .container {
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.What_we_do .container h2{
+.What_we_do .container h2 {
     text-align: center;
     margin: 0 auto 40px auto;
     font-size: 40px;
     font-weight: 300;
 }
 
-.What_we_do .container ul{
+.What_we_do .container ul {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -177,19 +172,19 @@ header h2{
     width: 100%;
 }
 
-.What_we_do .container li{
+.What_we_do .container li {
     display: flex;
     width: auto;
     justify-content: center;
 }
 
-.What_we_do .container p{
+.What_we_do .container p {
     margin: 15px 0 15px 0;
     font-size: 30px;
     font-weight: 300;
 }
 
-.Why_us{
+.Why_us {
     display: flex;
     justify-content: center;
     height: auto;
@@ -197,21 +192,20 @@ header h2{
     border-bottom: 1px solid #909090;
 }
 
-.Why_us .container{
+.Why_us .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.Why_us .container h2{
+.Why_us .container h2 {
     text-align: center;
     font-size: 35px;
     font-weight: 500;
-    
 }
 
-.Why_us .container ul{
+.Why_us .container ul {
     margin-top: 30px;
     gap: 40px;
     display: flex;
@@ -219,44 +213,41 @@ header h2{
     list-style: none;
 }
 
-.Why_us .container li{
+.Why_us .container li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 300px;
     height: 370px;
-    border: 2px solid #FFF;
+    border: 2px solid #fff;
     border-radius: 20px;
     transition: all 0.17s ease-in-out;
 }
 
-.Why_us .container li:hover{
+.Why_us .container li:hover {
     transform: scale(0.9);
-    box-shadow: 0 0 10px #FFF;
+    box-shadow: 0 0 10px #fff;
 }
 
-
-.Why_us .container li .text_header{
+.Why_us .container li .text_header {
     display: flex;
     align-items: center;
     height: 35%;
 }
 
-.Why_us .container li .text_main{
+.Why_us .container li .text_main {
     display: flex;
     height: 80%;
     width: 95%;
-    
 }
 
-.Why_us .container li .text_header h3{
+.Why_us .container li .text_header h3 {
     text-align: center;
     font-size: 35px;
 }
 
-.Why_us .container li .text_main p{
+.Why_us .container li .text_main p {
     font-size: 30px;
     text-align: center;
-    
 }
