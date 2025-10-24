@@ -3,6 +3,10 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const pool = require("./db");
+<<<<<<< Updated upstream
+=======
+const e = require("express");
+>>>>>>> Stashed changes
 
 const app = express();
 
@@ -18,18 +22,37 @@ app.use(IMAGES_URL, express.static(IMAGES_DIR));
 
 app.get("/api/products", async (req, res) => {
   try {
-    const sql = `
+    const { type } = req.query;
+
+    const filters = [];
+    const params = [];
+
+    if (type) {
+      filters.push("type = ?");
+      params.push(type);
+    }
+
+    let sql = `
       SELECT 
         p_id, p_name, processor, videoCard, ram, drive, casePC, \`system\`,
         price, image, type, popularity
       FROM ${PRODUCTS_TABLE}
-      ORDER BY p_id ASC
     `;
-    const [rows] = await pool.query(sql);
 
+<<<<<<< Updated upstream
     const host = req.get("host");
     const protocol = req.protocol;
 
+=======
+    if (filters.length > 0) {
+      sql += ` WHERE ${filters.join(" AND ")}`;
+    }
+
+    const [rows] = await pool.query(sql, params);
+
+    const host = req.get("host");
+    const protocol = req.protocol;
+>>>>>>> Stashed changes
     const products = rows.map((r) => {
       const obj = { ...r };
       if (obj.image) {
@@ -66,6 +89,7 @@ app.get("/api/products/:p_id", async (req, res) => {
   } catch (err) {
     console.error("GET /api/products/:p_id error:", err);
     res.status(500).json({ error: "Server error" });
+<<<<<<< Updated upstream
   }
 });
 
@@ -261,6 +285,8 @@ app.delete("/api/users/:id", async (req, res) => {
   } catch (err) {
     console.error("DELETE /api/users/:id error:", err);
     res.status(500).json({ error: "Server error" });
+=======
+>>>>>>> Stashed changes
   }
 });
 

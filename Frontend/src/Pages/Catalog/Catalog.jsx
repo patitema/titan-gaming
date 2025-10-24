@@ -1,20 +1,14 @@
 import React, { useEffect } from 'react'
 import './Catalog.css'
-import { renderProducts, initializeSorting } from '../../context/products'
 import { Link, useLocation } from 'react-router-dom'
 import { useProducts } from '../../context/useProducts'
-import { useCart } from '../../context/CartContext'
 import { CardProduct } from '../../components/Card/Card'
 
 function Catalog() {
     const location = useLocation()
     const { handleSortProducts, products: newProducts } = useProducts()
 
-    useEffect(() => {
-        initializeSorting()
-    }, [location.search])
-
-    console.log(newProducts)
+    useEffect(() => {}, [location.search])
 
     return (
         <div>
@@ -22,22 +16,22 @@ function Catalog() {
                 <div className="container_filters">
                     <ul>
                         <li>
-                            <Link to="/catalog?filter=optimal">
+                            <Link to="/catalog?type=1">
                                 <h2>Оптимальные</h2>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/catalog?filter=gaming">
+                            <Link to="/catalog?type=2">
                                 <h2>Игровые</h2>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/catalog?filter=porwerful">
+                            <Link to="/catalog?type=3">
                                 <h2>Мощные</h2>
                             </Link>
                         </li>
                         <li>
-                            <Link href="/catalog">
+                            <Link href="/catalog?type= ">
                                 <h2>Все</h2>
                             </Link>
                         </li>

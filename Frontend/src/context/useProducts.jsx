@@ -5,11 +5,13 @@ export const useProducts = () => {
     const [products, setProducts] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
 
-    const handleProducts = () => {
-        fetch('http://localhost:5000/api/products', { cache: 'no-store' })
+    const handleProducts = (params = '') => {
+        console.log('params', params)
+        fetch(`http://localhost:5000/api/products${params}`, {
+            cache: 'no-store',
+        })
             .then((res) => res.json())
             .then((data) => setProducts(data.products))
-        console.log(setProducts())
     }
 
     const handleSortProducts = (type) => {
@@ -32,10 +34,8 @@ export const useProducts = () => {
     }
 
     const handleFilterProduct = () => {
-        if (searchParams.get('filter')) {
-            setProducts(
-                products?.filter((p) => p.type === searchParams.get('filter'))
-            )
+        if (searchParams.get('type')) {
+            handleProducts(`?type=${searchParams.get('type')}`)
         }
     }
 
@@ -43,6 +43,7 @@ export const useProducts = () => {
         handleProducts()
     }, [])
     useEffect(() => {
+        console.log('hello --- 1213')
         handleFilterProduct()
     }, [searchParams])
     return { products, handleSortProducts }
