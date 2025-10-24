@@ -132,13 +132,6 @@ function Profile() {
                             </button>
                         </div>
                     </form>
-                    <h2>Вы смотрели:</h2>
-                    <ul className="list-watched">
-                        <li>
-                            <img src="/images/Bashmak.png" alt="Bashmak" />
-                            <p>Bashmak</p>
-                        </li>
-                    </ul>
                 </div>
             </main>
         </div>
