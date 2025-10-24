@@ -4,6 +4,10 @@ const path = require("path");
 const cors = require("cors");
 const pool = require("./db");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+const e = require("express");
+>>>>>>> Stashed changes
 =======
 const e = require("express");
 >>>>>>> Stashed changes
@@ -40,9 +44,20 @@ app.get("/api/products", async (req, res) => {
     `;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     const host = req.get("host");
     const protocol = req.protocol;
 
+=======
+    if (filters.length > 0) {
+      sql += ` WHERE ${filters.join(" AND ")}`;
+    }
+
+    const [rows] = await pool.query(sql, params);
+
+    const host = req.get("host");
+    const protocol = req.protocol;
+>>>>>>> Stashed changes
 =======
     if (filters.length > 0) {
       sql += ` WHERE ${filters.join(" AND ")}`;
@@ -89,6 +104,7 @@ app.get("/api/products/:p_id", async (req, res) => {
   } catch (err) {
     console.error("GET /api/products/:p_id error:", err);
     res.status(500).json({ error: "Server error" });
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   }
 });
@@ -285,6 +301,8 @@ app.delete("/api/users/:id", async (req, res) => {
   } catch (err) {
     console.error("DELETE /api/users/:id error:", err);
     res.status(500).json({ error: "Server error" });
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   }
