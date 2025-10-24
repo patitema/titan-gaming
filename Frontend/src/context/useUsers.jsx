@@ -1,18 +1,11 @@
 import { useState, useCallback } from 'react'
 
-// Базовый URL API
 const API_BASE_URL = 'http://localhost:5000/api'
 
-/**
- * Хук для работы с пользователями через API
- */
 export const useUsers = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-    /**
-     * Регистрация нового пользователя
-     */
     const register = useCallback(async (userData) => {
         setLoading(true)
         setError(null)
@@ -42,9 +35,6 @@ export const useUsers = () => {
         }
     }, [])
 
-    /**
-     * Авторизация пользователя
-     */
     const login = useCallback(async (credentials) => {
         setLoading(true)
         setError(null)
@@ -74,9 +64,6 @@ export const useUsers = () => {
         }
     }, [])
 
-    /**
-     * Получение пользователя по ID
-     */
     const getUserById = useCallback(async (userId) => {
         setLoading(true)
         setError(null)
@@ -100,9 +87,6 @@ export const useUsers = () => {
         }
     }, [])
 
-    /**
-     * Обновление данных пользователя
-     */
     const updateUser = useCallback(async (userId, userData) => {
         setLoading(true)
         setError(null)

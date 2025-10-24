@@ -3,14 +3,7 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const pool = require("./db");
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 const e = require("express");
->>>>>>> Stashed changes
-=======
-const e = require("express");
->>>>>>> Stashed changes
 
 const app = express();
 
@@ -43,12 +36,6 @@ app.get("/api/products", async (req, res) => {
       FROM ${PRODUCTS_TABLE}
     `;
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    const host = req.get("host");
-    const protocol = req.protocol;
-
-=======
     if (filters.length > 0) {
       sql += ` WHERE ${filters.join(" AND ")}`;
     }
@@ -57,17 +44,7 @@ app.get("/api/products", async (req, res) => {
 
     const host = req.get("host");
     const protocol = req.protocol;
->>>>>>> Stashed changes
-=======
-    if (filters.length > 0) {
-      sql += ` WHERE ${filters.join(" AND ")}`;
-    }
 
-    const [rows] = await pool.query(sql, params);
-
-    const host = req.get("host");
-    const protocol = req.protocol;
->>>>>>> Stashed changes
     const products = rows.map((r) => {
       const obj = { ...r };
       if (obj.image) {
@@ -104,8 +81,6 @@ app.get("/api/products/:p_id", async (req, res) => {
   } catch (err) {
     console.error("GET /api/products/:p_id error:", err);
     res.status(500).json({ error: "Server error" });
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   }
 });
 
@@ -301,10 +276,6 @@ app.delete("/api/users/:id", async (req, res) => {
   } catch (err) {
     console.error("DELETE /api/users/:id error:", err);
     res.status(500).json({ error: "Server error" });
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   }
 });
 
