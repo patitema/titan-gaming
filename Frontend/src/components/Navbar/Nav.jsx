@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext'
 
 const Nav = () => {
     const navigate = useNavigate()
-    const { user, isAuthenticated } = useAuth()
+    const { isAuthenticated } = useAuth()
 
     const handleProfileClick = () => {
         navigate(isAuthenticated ? '/profile' : '/login')

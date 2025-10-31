@@ -279,6 +279,64 @@ app.delete("/api/users/:id", async (req, res) => {
   }
 });
 
+const CART_TABLE = process.env.CART_TABLE || "cart";
+
+// GET /api/cart/:userId - получить корзину пользователя
+app.get("/api/cart/:userId", async (req, res) => {
+  try {
+    const [rows] = await pool.query(
+      `SELECT * FROM ${CART_TABLE} WHERE user_id = ?`,
+      [req.params.userId]
+    );
+    res.json({ cart: rows });
+  } catch (err) {
+    console.error("GET /api/cart/:userId error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// POST /api/cart - добавить товар в корзину
+app.post("/api/cart", async (req, res) => {
+  try {
+    const { product_id, user_id } = req.body;
+
+    if (!product_id || !user_id) {
+      return res
+        .status(400)
+        .json({ error: "product_id and user_id are required" });
+    }
+
+    const [result] = await pool.query(
+      `INSERT INTO ${CART_TABLE} (products, user_id) VALUES (?, ?)`,
+      [product_id, user_id]
+    );
+
+    res.status(201).json({ id: result.insertId });
+  } catch (err) {
+    console.error("POST /api/cart error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// DELETE /api/cart/:id - удалить товар из корзины
+app.delete("/api/cart/:id", async (req, res) => {
+  try {
+    const [result] = await pool.query(
+      `DELETE FROM ${CART_TABLE} WHERE id = ?`,
+      [req.params.id]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Cart item not found" });
+    }
+
+    res.json({ message: "Cart item deleted successfully" });
+  } catch (err) {
+    console.error("DELETE /api/cart/:id error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

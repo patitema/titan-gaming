@@ -70,7 +70,7 @@ function Catalog() {
                 <div className="catalog-list">
                     <ul className="catalog">
                         {newProducts?.map((product) => (
-                            <CardProduct {...product} />
+                            <CardProduct key={product.p_id} {...product} />
                         ))}
                     </ul>
                     <ul className="page_list">

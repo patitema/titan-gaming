@@ -1,42 +1,51 @@
 import { Link } from 'react-router-dom'
+import { useCart } from '../../context/CartContext'
 
 export const CardProduct = (product) => {
+    const { addToCart } = useCart()
+
+    const handleBuyClick = (e) => {
+        e.preventDefault() // Предотвращаем переход по ссылке
+        addToCart(product.p_id)
+    }
+
     return (
-        <li class="product-card">
-            <Link to={`/product/${product.id}`}>
-                <div class="container-card">
-                    <div class="head_container">
+        <li className="product-card">
+            <Link to={`/product/${product.p_id}`}>
+                <div className="container-card">
+                    <div className="head_container">
                         <img src={product.image} alt={product.name} />
                         <h3>{product.name}</h3>
                     </div>
-                    <div class="main_container">
-                        <ul class="attributes">
-                            <li class="attribute">
-                                <p class="attr_name">Процессор</p>
-                                <p class="attr">{product.processor}</p>
+                    <div className="main_container">
+                        <ul className="attributes">
+                            <li className="attribute">
+                                <p className="attr_name">Процессор</p>
+                                <p className="attr">{product.processor}</p>
                             </li>
-                            <li class="attribute">
-                                <p class="attr_name">Видеокарта</p>
-                                <p class="attr">{product.videoCard}</p>
+                            <li className="attribute">
+                                <p className="attr_name">Видеокарта</p>
+                                <p className="attr">{product.videoCard}</p>
                             </li>
-                            <li class="attribute">
-                                <p class="attr_name">Оперативная память</p>
-                                <p class="attr">{product.ram}</p>
+                            <li className="attribute">
+                                <p className="attr_name">Оперативная память</p>
+                                <p className="attr">{product.ram}</p>
                             </li>
-                            <li class="attribute">
-                                <p class="attr_name">Диск SSD</p>
-                                <p class="attr">{product.drive}</p>
+                            <li className="attribute">
+                                <p className="attr_name">Диск SSD</p>
+                                <p className="attr">{product.drive}</p>
                             </li>
-                            <li class="attribute">
-                                <p class="attr_name">Корпус</p>
-                                <p class="attr">{product.case}</p>
+                            <li className="attribute">
+                                <p className="attr_name">Корпус</p>
+                                <p className="attr">{product.case}</p>
                             </li>
-                            <li class="attribute">
-                                <p class="attr_name">Система</p>
-                                <p class="attr">{product.system}</p>
+                            <li className="attribute">
+                                <p className="attr_name">Система</p>
+                                <p className="attr">{product.system}</p>
                             </li>
                         </ul>
-                        <button>
+                        <button onClick={handleBuyClick}>
+                            Купить -{' '}
                             {Number(product.price).toLocaleString('ru-RU')}₽
                         </button>
                     </div>
