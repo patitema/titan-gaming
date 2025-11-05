@@ -1,0 +1,88 @@
+.container-porduct {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    padding: 50px 200px 50px 200px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #252525;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.container-porduct > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    width: 100%;
+}
+
+.container-porduct img {
+    width: 400px;
+    height: 400px;
+    object-fit: fill;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.head-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.head-info h2 {
+    font-size: 60px;
+    color: #fff;
+    margin: 0;
+}
+
+.Buy-btn {
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffa246;
+    font-size: 26px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.Buy-btn:hover {
+    box-shadow: 0 0 5px #ffa246;
+}
+
+.attributes-products {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.attribute {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px #fff;
+    padding: 20px 0;
+}
+
+.attr_name {
+    color: #cdcdcd;
+    font-size: 24px;
+    user-select: none;
+    flex: 1;
+}
+
+.attr {
+    color: #fff;
+    font-size: 24px;
+    flex: 2;
+    text-align: right;
+}

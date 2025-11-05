@@ -3,7 +3,6 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const pool = require("./db");
-const e = require("express");
 
 const app = express();
 
@@ -86,7 +85,6 @@ app.get("/api/products/:p_id", async (req, res) => {
 
 const USERS_TABLE = process.env.USERS_TABLE || "users";
 
-// GET /api/users
 app.get("/api/users", async (req, res) => {
   try {
     const [rows] = await pool.query(
@@ -99,7 +97,6 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// GET /api/users/:id - получить пользователя по ID
 app.get("/api/users/:id", async (req, res) => {
   try {
     const [rows] = await pool.query(
@@ -114,19 +111,16 @@ app.get("/api/users/:id", async (req, res) => {
   }
 });
 
-// POST /api/users
 app.post("/api/users", async (req, res) => {
   try {
     const { username, password, email, phone, address } = req.body;
 
-    // Проверка обязательных полей
     if (!username || !password || !email) {
       return res
         .status(400)
         .json({ error: "Username, password and email are required" });
     }
 
-    // Проверка на существующего пользователя
     const [existingUsers] = await pool.query(
       `SELECT id FROM ${USERS_TABLE} WHERE email = ? OR username = ?`,
       [email, username]
@@ -138,13 +132,11 @@ app.post("/api/users", async (req, res) => {
         .json({ error: "User with this email or username already exists" });
     }
 
-    // Создание пользователя
     const [result] = await pool.query(
       `INSERT INTO ${USERS_TABLE} (username, password, email, phone, address) VALUES (?, ?, ?, ?, ?)`,
       [username, password, email, phone || null, address || null]
     );
 
-    // Получение созданного пользователя
     const [newUser] = await pool.query(
       `SELECT * FROM ${USERS_TABLE} WHERE id = ?`,
       [result.insertId]
@@ -219,7 +211,6 @@ app.put("/api/users/:id", async (req, res) => {
       updateValues
     );
 
-    // Получение обновленного пользователя
     const [updatedUser] = await pool.query(
       `SELECT * FROM ${USERS_TABLE} WHERE id = ?`,
       [userId]
@@ -232,7 +223,6 @@ app.put("/api/users/:id", async (req, res) => {
   }
 });
 
-// POST
 app.post("/api/auth/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -260,7 +250,6 @@ app.post("/api/auth/login", async (req, res) => {
   }
 });
 
-// DELETE
 app.delete("/api/users/:id", async (req, res) => {
   try {
     const [result] = await pool.query(
@@ -281,7 +270,6 @@ app.delete("/api/users/:id", async (req, res) => {
 
 const CART_TABLE = process.env.CART_TABLE || "cart";
 
-// GET /api/cart/:userId - получить корзину пользователя
 app.get("/api/cart/:userId", async (req, res) => {
   try {
     const [rows] = await pool.query(
@@ -318,7 +306,6 @@ app.post("/api/cart", async (req, res) => {
   }
 });
 
-// DELETE /api/cart/:id - удалить товар из корзины
 app.delete("/api/cart/:id", async (req, res) => {
   try {
     const [result] = await pool.query(

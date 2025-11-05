@@ -31,7 +31,7 @@ function Catalog() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/catalog?type= ">
+                            <Link href="/catalog?type=?">
                                 <h2>Все</h2>
                             </Link>
                         </li>
@@ -72,20 +72,6 @@ function Catalog() {
                         {newProducts?.map((product) => (
                             <CardProduct key={product.p_id} {...product} />
                         ))}
-                    </ul>
-                    <ul className="page_list">
-                        <li>
-                            <button type="button">1</button>
-                        </li>
-                        <li>
-                            <button type="button">2</button>
-                        </li>
-                        <li>
-                            <button type="button">3</button>
-                        </li>
-                        <li>
-                            <button type="button">...</button>
-                        </li>
                     </ul>
                 </div>
             </main>

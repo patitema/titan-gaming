@@ -5,7 +5,7 @@ export const CardProduct = (product) => {
     const { addToCart } = useCart()
 
     const handleBuyClick = (e) => {
-        e.preventDefault() // Предотвращаем переход по ссылке
+        e.preventDefault()
         addToCart(product.p_id)
     }
 
