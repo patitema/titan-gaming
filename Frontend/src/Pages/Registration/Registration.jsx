@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate, Link } from 'react-router-dom'
-import { useUsers } from '../../context/useUsers'
+import { registerUser } from '../../store/slices/usersSlice'
 import './Registration.css'
 
 function Registration() {
-    const { register, loading } = useUsers()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
@@ -35,10 +36,10 @@ function Registration() {
         }
 
         try {
-            await register(formData)
+            await dispatch(registerUser(formData)).unwrap()
             navigate('/profile') // после удачи — на профиль
         } catch (err) {
-            setError(err.message)
+            setError(err)
         }
     }
     return (

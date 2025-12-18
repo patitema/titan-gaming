@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useAuth } from '../../context/AuthContext'
-import { useUsers } from '../../context/useUsers'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateUser } from '../../store/slices/usersSlice'
+import { logout } from '../../store/slices/authSlice'
 import './Profile.css'
 
 function Profile() {
-    const { user, logout, refreshUser } = useAuth()
-    const { updateUser } = useUsers()
+    const dispatch = useDispatch()
+    const { user } = useSelector((state) => state.auth)
+    
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -17,7 +19,7 @@ function Profile() {
     const [success, setSuccess] = useState('')
 
     useEffect(() => {
-        // Загружаем данные пользователя из контекста
+        // Загружаем данные пользователя из Redux
         if (user) {
             setFormData({
                 username: user.username || '',
@@ -45,19 +47,15 @@ function Profile() {
         }
 
         try {
-            await updateUser(user.id, formData)
-
-            // Обновляем данные в контексте
-            await refreshUser()
-
+            await dispatch(updateUser({ userId: user.id, userData: formData })).unwrap()
             setSuccess('Данные профиля успешно сохранены')
         } catch (err) {
-            setError(err.message)
+            setError(err)
         }
     }
 
     const handleLogout = () => {
-        logout()
+        dispatch(logout())
     }
 
     if (!user) {

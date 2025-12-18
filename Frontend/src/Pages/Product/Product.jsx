@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { useCart } from '../../context/CartContext'
+import { fetchProducts } from '../../store/slices/productsSlice'
+import { addToCartAsync } from '../../store/slices/cartSlice'
+import { selectUser } from '../../store/slices/authSlice'
 import './Product.css'
 
 function Product() {
+    const dispatch = useDispatch()
     const { id } = useParams()
-    const { addToCart } = useCart()
+    const products = useSelector((state) => state.products.products)
+    const user = useSelector(selectUser)
     const [product, setProduct] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -14,16 +19,12 @@ function Product() {
         const fetchProduct = async () => {
             try {
                 setLoading(true)
-                const response = await fetch(
-                    `http://localhost:5000/api/products/${id}`
-                )
-                if (!response.ok) {
-                    throw new Error('Продукт не найден')
-                }
-                const data = await response.json()
-                setProduct(data.product)
+                setError(null)
+                
+                // Сначала загружаем все продукты
+                await dispatch(fetchProducts({ filter: '', sortKey: 'popularity' }))
             } catch (err) {
-                setError(err.message)
+                setError(err.message || 'Ошибка загрузки продукта')
             } finally {
                 setLoading(false)
             }
@@ -32,11 +33,35 @@ function Product() {
         if (id) {
             fetchProduct()
         }
-    }, [id])
+    }, [id, dispatch])
 
-    const handleBuyClick = () => {
-        if (product) {
-            addToCart(product.p_id)
+    useEffect(() => {
+        // Находим нужный продукт из загруженных
+        if (products.length > 0 && id) {
+            const foundProduct = products.find(p => p.p_id === Number(id))
+            if (foundProduct) {
+                setProduct(foundProduct)
+            } else {
+                setError('Продукт не найден')
+                setLoading(false)
+            }
+        }
+    }, [products, id])
+
+    const handleBuyClick = async () => {
+        if (product && user && user.id) {
+            try {
+                await dispatch(addToCartAsync({
+                    product_id: product.p_id,
+                    user_id: user.id,
+                    payment_type: 'cash'
+                })).unwrap()
+                alert('Товар добавлен в корзину!')
+            } catch (err) {
+                alert('Ошибка добавления в корзину: ' + err)
+            }
+        } else if (!user) {
+            alert('Для добавления в корзину необходимо войти в систему')
         }
     }
 

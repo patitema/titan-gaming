@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store'
 import Layout from './Layout'
 
 // Pages
@@ -15,26 +17,28 @@ import RequireAuth from './components/RequireAuth/RequireAuth'
 
 function App() {
     return (
-        <Routes>
-            <Route element={<Layout />}>
-                <Route path="/" element={<General />} />
-                <Route path="/catalog" element={<Catalog />} />
-                <Route path="/login" element={<Login />} />
-                <Route
-                    path="/profile"
-                    element={
-                        <RequireAuth>
-                            <Profile />
-                        </RequireAuth>
-                    }
-                />
-                <Route path="/product/:id" element={<Product />} />
-                <Route path="/registration" element={<Registration />} />
-                <Route path="/karzina" element={<Karzina />} />
-            </Route>
+        <Provider store={store}>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<General />} />
+                    <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/profile"
+                        element={
+                            <RequireAuth>
+                                <Profile />
+                            </RequireAuth>
+                        }
+                    />
+                    <Route path="/product/:id" element={<Product />} />
+                    <Route path="/registration" element={<Registration />} />
+                    <Route path="/karzina" element={<Karzina />} />
+                </Route>
 
-            <Route path="*" element={<NotFound />} />
-        </Routes>
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Provider>
     )
 }
 

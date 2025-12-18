@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
+import { loginUser } from '../../store/slices/authSlice'
 import './Login.css'
 
 function Login() {
-    const { login, loading } = useAuth()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
+    
+    const { loading, error: authError } = useSelector((state) => state.auth)
 
     const [formData, setFormData] = useState({
         email: '',
@@ -31,10 +34,10 @@ function Login() {
         }
 
         try {
-            await login(formData)
+            await dispatch(loginUser(formData)).unwrap()
             navigate('/profile')
         } catch (err) {
-            setError(err.message)
+            setError(err)
         }
     }
     return (
@@ -43,7 +46,7 @@ function Login() {
                 <div className="main-container">
                     <h3>Вход</h3>
                     <form id="login-form" onSubmit={handleSubmit}>
-                        {error && <p className="error">{error}</p>}
+                        {(error || authError) && <p className="error">{error || authError}</p>}
                         <input
                             type="email"
                             name="email"
@@ -60,8 +63,8 @@ function Login() {
                             onChange={handleChange}
                             required
                         />
-                        <button type="submit" id="login-btn">
-                            Войти
+                        <button type="submit" id="login-btn" disabled={loading}>
+                            {loading ? 'Вход...' : 'Войти'}
                         </button>
                         <Link to="/registration">
                             <button type="button" id="change-reg-btn">

@@ -1,12 +1,24 @@
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { useCart } from '../../context/CartContext'
+import { addToCartAsync } from '../../store/slices/cartSlice'
+import { selectUser } from '../../store/slices/authSlice'
 
 export const CardProduct = (product) => {
-    const { addToCart } = useCart()
+    const dispatch = useDispatch()
+    const user = useSelector(selectUser)
 
     const handleBuyClick = (e) => {
         e.preventDefault()
-        addToCart(product.p_id)
+        if (user && user.id) {
+            dispatch(addToCartAsync({
+                product_id: product.p_id,
+                user_id: user.id,
+                payment_type: 'cash'
+            }))
+        } else {
+            alert('Для добавления в корзину необходимо войти в систему')
+        }
     }
 
     return (

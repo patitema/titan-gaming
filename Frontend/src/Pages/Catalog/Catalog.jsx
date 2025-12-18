@@ -1,14 +1,26 @@
 import React, { useEffect } from 'react'
-import './Catalog.css'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
-import { useProducts } from '../../context/useProducts'
+import './Catalog.css'
+import { fetchProducts, setFilter, setSortKey } from '../../store/slices/productsSlice'
 import { CardProduct } from '../../components/Card/Card'
 
 function Catalog() {
+    const dispatch = useDispatch()
     const location = useLocation()
-    const { handleSortProducts, products: newProducts } = useProducts()
+    
+    const { products, loading, error } = useSelector((state) => state.products)
+    
+    const handleSortProducts = (type) => {
+        dispatch(setSortKey(type))
+    }
 
-    useEffect(() => {}, [location.search])
+    useEffect(() => {
+        const params = new URLSearchParams(location.search)
+        const type = params.get('type')
+        dispatch(setFilter(type || ''))
+        dispatch(fetchProducts({ filter: type || '', sortKey: 'popularity' }))
+    }, [location.search, dispatch])
 
     return (
         <div>
@@ -31,7 +43,7 @@ function Catalog() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/catalog?type=?">
+                            <Link to="/catalog">
                                 <h2>Все</h2>
                             </Link>
                         </li>
@@ -58,7 +70,7 @@ function Catalog() {
                         <li>
                             <p
                                 id="sort-popularity"
-                                onClick={() => handleSortProducts('price-asc')}
+                                onClick={() => handleSortProducts('popularity')}
                             >
                                 По популярности
                             </p>
@@ -67,9 +79,11 @@ function Catalog() {
                 </div>
             </header>
             <main>
+                {loading && <p>Загрузка продуктов...</p>}
+                {error && <p style={{ color: 'red' }}>Ошибка: {error}</p>}
                 <div className="catalog-list">
                     <ul className="catalog">
-                        {newProducts?.map((product) => (
+                        {products?.map((product) => (
                             <CardProduct key={product.p_id} {...product} />
                         ))}
                     </ul>

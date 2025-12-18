@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { useCart } from '../../context/CartContext'
-import { useProducts } from '../../context/ProductsProvider'
-import { useAuth } from '../../context/AuthContext'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchCart, removeFromCartAsync } from '../../store/slices/cartSlice'
+import { fetchProducts } from '../../store/slices/productsSlice'
+import { selectUser } from '../../store/slices/authSlice'
 import './Karzina.css'
 
 function Karzina() {
-    const { cart, removeFromCart } = useCart()
-    const { products } = useProducts()
-    const { user } = useAuth()
+    const dispatch = useDispatch()
+    const cartItems = useSelector((state) => state.cart.cartItems)
+    const products = useSelector((state) => state.products.products)
+    const user = useSelector(selectUser)
     const [cartProducts, setCartProducts] = useState([])
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
+        if (user && user.id) {
+            dispatch(fetchCart(user.id))
+            dispatch(fetchProducts({ filter: '', sortKey: 'popularity' }))
+        }
+    }, [user, dispatch])
+
+    useEffect(() => {
         // Сопоставляем товары корзины с продуктами
-        const mappedProducts = cart
+        const mappedProducts = cartItems
             .map((cartItem) => {
                 const product = products.find(
                     (p) => p.p_id === cartItem.products
@@ -33,10 +42,14 @@ function Karzina() {
             0
         )
         setTotal(sum)
-    }, [cart, products])
+    }, [cartItems, products])
 
-    const handleRemove = (cartItemId) => {
-        removeFromCart(cartItemId)
+    const handleRemove = async (cartItemId) => {
+        try {
+            await dispatch(removeFromCartAsync(cartItemId)).unwrap()
+        } catch (err) {
+            console.error('Failed to remove item from cart:', err)
+        }
     }
 
     if (!user) {

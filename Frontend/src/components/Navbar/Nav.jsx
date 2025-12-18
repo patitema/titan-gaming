@@ -1,14 +1,20 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './Nav.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
+import { logout } from '../../store/slices/authSlice'
 
 const Nav = () => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { isAuthenticated } = useAuth()
+    const { isAuthenticated } = useSelector((state) => state.auth)
 
     const handleProfileClick = () => {
         navigate(isAuthenticated ? '/profile' : '/login')
+    }
+
+    const handleLogout = () => {
+        dispatch(logout())
     }
 
     return (
@@ -72,6 +78,17 @@ const Nav = () => {
                         </span>
                     )}
                 </button>
+
+                {isAuthenticated && (
+                    <button
+                        className="logout-btn"
+                        type="button"
+                        onClick={handleLogout}
+                        aria-label="Выйти"
+                    >
+                        Выйти
+                    </button>
+                )}
             </div>
         </nav>
     )
